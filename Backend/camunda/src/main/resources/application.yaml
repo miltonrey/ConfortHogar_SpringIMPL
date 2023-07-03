@@ -8,3 +8,8 @@ camunda.bpm:
 
 server:
   port: 8090
+
+spring:
+  devtools:
+    restart:
+      enabled=true:
