@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -34,6 +34,8 @@ const TaskList = () => {
 const TaskDetails = () => {
   const { taskId } = useParams();
   const [task, setTask] = useState(null);
+  const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchTask();
@@ -51,11 +53,22 @@ const TaskDetails = () => {
 
   const handleValidateTask = async () => {
     try {
-      await fetch(`http://localhost:8090/api/tasks/${taskId}/validate`, {
-        method: "POST",
-      });
-      if (task.valid === true) {
+      const response = await fetch(
+        `http://localhost:8090/api/tasks/${taskId}/validate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
         alert("La tarea ha sido validada");
+        navigate("/"); // Redirige a la página TaskList
+      } else {
+        const errorData = await response.json();
+        console.error("Error al validar la tarea:", errorData);
       }
     } catch (error) {
       console.error(error);

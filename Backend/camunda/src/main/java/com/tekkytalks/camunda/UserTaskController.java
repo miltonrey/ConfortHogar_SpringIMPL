@@ -6,6 +6,7 @@ import org.camunda.bpm.engine.TaskService;
 import org.camunda.bpm.engine.task.Task;
 import org.camunda.bpm.engine.variable.Variables;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
@@ -86,8 +87,12 @@ public class UserTaskController {
         String Validate="";
         VariableMap variables = Variables.createVariables();
         variables.put("true", Validate);
-        taskService.complete(taskId, variables);
-        return ResponseEntity.ok("Tarea validada exitosamente");
+        try {
+            taskService.complete(taskId, variables);
+            return ResponseEntity.ok("Tarea validada exitosamente");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al validar la tarea");
+        }
     }
 
 
