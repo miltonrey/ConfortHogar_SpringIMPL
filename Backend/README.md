@@ -13,10 +13,7 @@
 - El usuario y la contraseña son "demo" y "demo" respectivamente.
 - Una vez que haya iniciado sesión, vaya a la pestaña "Tasklist", haga clic en "Start process" y ejecute el proceso "loanprocess" (En el input "Tipos de madera", las opciones son: duras, blandas, silvestres).
 - Hay un tiempo de espera de 10 segundos para poder visualizar el proceso.
-- Una vez que el proceso se haya completado, podra ver en la pestaña de All task el nombre digitado en el formulario.
-- Para continuar, dar click en "Claim" y luego en "Complete".
-- Para finalizar, llegará a su correo un mensaje con la cotización del producto.
-
+- Ahora ejecute el front de la aplicacion para poder visualizar las tareas (ver README del frontend)
  
 
 
