@@ -10,13 +10,19 @@ Ahí elegimos la versión para nuestro sistema operativo, elegimos Windows Insta
 
 Y posteriormente instalamos el archivo.exe siguiendo los pasos de la instalacion.
 
-Ahora en una terminal de comandos (cmd) probamos a poner el comnando `npm`  
+Ahora en una terminal de comandos (cmd), probamos a poner el comnando `npm`
+en caso de que nos de un mensaje de error o no se reconozca el comando, hacer los siguientes pasos:
+1. En la barra de busqueda de windows, escriba `Configuración avanzada del sistema`
+3.  Haga clic en la pestaña Opciones Avanzadas (se encuentra en la parte superior).
+4.  A continuación, haz clic en el botón Variable de entorno …
+5.  Ahora tiene una ventana de variable de entorno: desde la variable de usuario, seleccione «Path»
+6.  Haga clic en Editar
+7.  Ahora, haga click en el boton Nuevo, agregue la ruta de acceso donde se instaló Node.js. ( C:\Archivos de programa\nodejs\).
+8.  Aceptar y Aplicar en las siguientes ventanas.
+9.  El paso final es reiniciar su ordenador.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+### Ejecutar el proyecto 
+### En una terminal en la carpeta del proyecto cliente, ejecutar este comando: `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
