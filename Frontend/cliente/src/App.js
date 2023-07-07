@@ -2,6 +2,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
 import { TaskList, TaskDetails } from "./components";
+import './component.css';
 
 export default function App() {
   return (

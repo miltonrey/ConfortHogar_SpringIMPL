@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import './component.css';
+
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -17,18 +19,21 @@ const TaskList = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Tareas Pendientes</h1>
+    <div className="TaskListContainer">
+      
       {tasks.map((task) => (
-        <div key={task.id}>
-          <h3>{task.name}</h3>
-          <h3>{task.id}</h3>
-          <p>Assignee: {task.assignee}</p>
-          <Link to={`/tasks/${task.id}`}>Ver detalles</Link>
+        <div className="TaskListBoxContainer" key={task.id}>
+          <h1>Tarea Pendiente: </h1>
+          <div className="TaskListBox">
+            <p>La tarea es: {task.name}</p>
+            <p>Con el id: {task.id}</p>
+            <Link to={`/tasks/${task.id}`}>Ver detalles</Link>
+          </div>
         </div>
       ))}
     </div>
   );
+  
 };
 
 const TaskDetails = () => {
@@ -80,11 +85,11 @@ const TaskDetails = () => {
   }
 
   return (
-    <div>
+    <div class="taskDone">
       <h1>Detalles de la Tarea</h1>
       <h3>{task.name}</h3>
       <p>ID: {task.id}</p>
-      <p>Responsable: {task.assignee}</p>
+      <p>Responsable: {task.formName}</p>
       <p>Mensaje: {task.rejectReason}</p>
       <p>Ancho: {task.formAncho}</p>
       <p>Alto: {task.formAlto}</p>
