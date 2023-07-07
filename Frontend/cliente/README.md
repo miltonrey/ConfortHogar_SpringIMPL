@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Primero debemos ir a la página de descarga oficial, la cual es:
+
+https://nodejs.org/en/download/
+
+Ahí elegimos la versión para nuestro sistema operativo, elegimos Windows Installer.
+
+Y posteriormente instalamos el archivo.exe siguiendo los pasos de la instalacion.
+
+Ahora en una terminal de comandos (cmd) probamos a poner el comnando `npm`  
+
 ## Available Scripts
 
 In the project directory, you can run:
